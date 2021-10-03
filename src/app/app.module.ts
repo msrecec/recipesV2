@@ -15,6 +15,8 @@ import { ShoppingListFormComponent } from './components/shopping-list/shopping-l
 import { ShoppingListItemComponent } from './components/shopping-list/shopping-list-item/shopping-list-item.component';
 import { ShoppingListListComponent } from './components/shopping-list/shopping-list-list/shopping-list-list.component';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list/shopping-list.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ShoppingListComponent } from './components/shopping-list/shopping-list/
     ShoppingListFormComponent,
     ShoppingListItemComponent,
     ShoppingListListComponent,
-    ShoppingListComponent
+    ShoppingListComponent,
+    NavigationComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
