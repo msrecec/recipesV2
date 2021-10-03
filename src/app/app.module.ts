@@ -17,6 +17,8 @@ import { ShoppingListListComponent } from './components/shopping-list/shopping-l
 import { ShoppingListComponent } from './components/shopping-list/shopping-list/shopping-list.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { IngredientsResolver } from './components/ingredients/ingredients-form/ingredients-resolver.service';
 
 @NgModule({
   declarations: [
@@ -35,8 +37,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ShoppingListComponent,
     NavigationComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
+  providers: [IngredientsResolver],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
