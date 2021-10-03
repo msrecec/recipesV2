@@ -16,7 +16,7 @@ import { ShoppingListItemComponent } from './components/shopping-list/shopping-l
 import { ShoppingListListComponent } from './components/shopping-list/shopping-list-list/shopping-list-list.component';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list/shopping-list.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { HeaderComponent } from './components/header/header.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -34,13 +34,9 @@ import { HeaderComponent } from './components/header/header.component';
     ShoppingListListComponent,
     ShoppingListComponent,
     NavigationComponent,
-    HeaderComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
