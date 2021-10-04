@@ -1,1 +1,5 @@
-<p>ingredients-list works!</p>
+<div>
+  <div *ngFor="let ingredient of ingredients">
+    <app-ingredients-item (onRemoveIngredient)="refreshIngredients()" [ingredient]="ingredient"></app-ingredients-item>
+  </div>
+</div>

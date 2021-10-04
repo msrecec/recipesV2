@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { IngredientsFormComponent } from './components/ingredients/ingredients-form/ingredients-form.component';
 import { IngredientsItemComponent } from './components/ingredients/ingredients-item/ingredients-item.component';
 import { IngredientsListComponent } from './components/ingredients/ingredients-list/ingredients-list.component';
-import { IngredientsComponent } from './components/ingredients/ingredients/ingredients.component';
 import { RecipesFormComponent } from './components/recipes/recipes-form/recipes-form.component';
 import { RecipesItemComponent } from './components/recipes/recipes-item/recipes-item.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
@@ -26,7 +25,6 @@ import { IngredientsResolver } from './components/ingredients/ingredients-form/i
     IngredientsFormComponent,
     IngredientsItemComponent,
     IngredientsListComponent,
-    IngredientsComponent,
     RecipesFormComponent,
     RecipesItemComponent,
     RecipesListComponent,
