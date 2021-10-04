@@ -1,1 +1,13 @@
-<p>recipes-list works!</p>
+<div class="col-12" style="padding-bottom: 10px;">
+  <div style="width:100%; display: flex; justify-content: center; align-items:center" *ngFor="let recipe of recipes">
+    <app-recipes-item style="width: 100%;" [recipe]="recipe">
+    </app-recipes-item>
+    <div>
+      <button style="width: 100px; height: 100px; margin: 1px; display: block" class="btn btn-primary">Edit</button>
+      <button style="width: 100px; height: 100px; margin: 1px; display: block" class="btn btn-danger">Delete</button>
+    </div>
+  </div>
+  <div style="width:300px; height: auto; margin: 0 auto; padding: 10px; position: relative;">
+    <button class="btn btn-primary" style="margin: 3px;">Add new Ingredient</button>
+  </div>
+</div>

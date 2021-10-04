@@ -4,6 +4,7 @@ import { IngredientsFormComponent } from './components/ingredients/ingredients-f
 import { IngredientsResolver } from './components/ingredients/ingredients-form/ingredients-resolver.service';
 import { IngredientsListComponent } from './components/ingredients/ingredients-list/ingredients-list.component';
 import { RecipesFormComponent } from './components/recipes/recipes-form/recipes-form.component';
+import { RecipesResolver } from './components/recipes/recipes-form/recipes-resolver.service';
 import { RecipesComponent } from './components/recipes/recipes/recipes.component';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list/shopping-list.component';
 
@@ -23,8 +24,22 @@ const routes: Routes = [
     component: IngredientsFormComponent,
     resolve: { ingredient: IngredientsResolver },
   },
-  { path: 'recipes', component: RecipesComponent },
-  { path: 'recipes/edit/:name', component: RecipesFormComponent },
+  {
+    path: 'recipes',
+    component: RecipesComponent,
+    children: [
+      {
+        path: 'edit/:name',
+        component: RecipesFormComponent,
+        resolve: { recipe: RecipesResolver },
+      },
+      {
+        path: 'create',
+        component: RecipesFormComponent,
+        resolve: { recipe: RecipesResolver },
+      },
+    ],
+  },
 ];
 
 @NgModule({
