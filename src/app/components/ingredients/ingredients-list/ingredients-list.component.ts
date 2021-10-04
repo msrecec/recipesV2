@@ -32,4 +32,13 @@ export class IngredientsListComponent implements OnInit {
       this.ingredients = ingredients;
     });
   }
+
+  onEdit(ingredient: Ingredient) {
+    this.router.navigate(['ingredients', 'edit', ingredient.name]);
+  }
+
+  onDelete(ingredient: Ingredient) {
+    this.ingredientsService.removeByName(ingredient.name);
+    this.refreshIngredients();
+  }
 }

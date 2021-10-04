@@ -10,21 +10,8 @@ import { IngredientsService } from 'src/app/services/ingredients/ingredients.ser
 })
 export class IngredientsItemComponent implements OnInit {
   @Input() ingredient!: Ingredient;
-  @Output() onRemoveIngredient = new EventEmitter<Ingredient>();
 
-  constructor(
-    private router: Router,
-    private ingredientsService: IngredientsService
-  ) {}
-
-  onEdit() {
-    this.router.navigate(['ingredients', 'edit', this.ingredient.name]);
-  }
-
-  onDelete() {
-    this.ingredientsService.removeByName(this.ingredient.name);
-    this.onRemoveIngredient.emit(this.ingredient);
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 }
