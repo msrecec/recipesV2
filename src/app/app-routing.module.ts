@@ -18,7 +18,7 @@ const routes: Routes = [
     resolve: { ingredient: IngredientsResolver },
   },
   {
-    path: 'ingredients/create/:name',
+    path: 'ingredients/create',
     component: IngredientsFormComponent,
     resolve: { ingredient: IngredientsResolver },
   },

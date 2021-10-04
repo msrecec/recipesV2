@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, Data, Router } from '@angular/router';
 import { Ingredient } from 'src/app/models/ingredient.model';
@@ -15,7 +16,8 @@ export class IngredientsFormComponent implements OnInit {
   constructor(
     private ingredientsService: IngredientsService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private _location: Location
   ) {}
 
   ngOnInit(): void {
@@ -26,11 +28,11 @@ export class IngredientsFormComponent implements OnInit {
 
   addIngredient(): void {
     this.ingredientsService.addIngredient(this.ingredient);
+    // this.router.navigate(['ingredients']);
+    this._location.back();
   }
 
-  clearIngredient(): void {
-    this.ingredient.name = '';
-    this.ingredient.description = '';
-    this.ingredient.halal = false;
+  cancel(): void {
+    this._location.back();
   }
 }

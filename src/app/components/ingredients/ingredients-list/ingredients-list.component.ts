@@ -1,5 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, of, pipe } from 'rxjs';
 import { Ingredient } from 'src/app/models/ingredient.model';
 import { IngredientsService } from 'src/app/services/ingredients/ingredients.service';
@@ -11,13 +11,20 @@ import { IngredientsService } from 'src/app/services/ingredients/ingredients.ser
 })
 @Injectable()
 export class IngredientsListComponent implements OnInit {
-  constructor(private ingredientsService: IngredientsService) {}
+  constructor(
+    private ingredientsService: IngredientsService,
+    private router: Router
+  ) {}
   ingredients!: Ingredient[];
 
   ngOnInit(): void {
     this.ingredientsService.getIngredients().subscribe((ingredients) => {
       this.ingredients = ingredients;
     });
+  }
+
+  onCreate() {
+    this.router.navigate(['ingredients', 'create']);
   }
 
   refreshIngredients() {

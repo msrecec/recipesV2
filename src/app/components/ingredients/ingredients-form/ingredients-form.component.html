@@ -10,7 +10,7 @@
     <input [(ngModel)]='ingredient.halal' type="checkbox" name="halal" id="halal"> Halal ?
   </div>
   <div class="col-12">
-    <button class="btn btn-danger" style="margin: 1px;">Cancel</button>
+    <button (click)="cancel()" class="btn btn-danger" style="margin: 1px;">Cancel</button>
     <button (click)="addIngredient()" class="btn btn-success" style="margin: 1px;">Submit</button>
   </div>
 </div>
