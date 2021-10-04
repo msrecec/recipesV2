@@ -3,7 +3,8 @@
     <app-recipes-item style="width: 100%;" [recipe]="recipe">
     </app-recipes-item>
     <div>
-      <button style="width: 100px; height: 100px; margin: 1px; display: block" class="btn btn-primary">Edit</button>
+      <button (click)="onEdit(recipe)" style="width: 100px; height: 100px; margin: 1px; display: block"
+        class="btn btn-primary">Edit</button>
       <button style="width: 100px; height: 100px; margin: 1px; display: block" class="btn btn-danger">Delete</button>
     </div>
   </div>

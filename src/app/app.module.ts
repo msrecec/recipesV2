@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { IngredientsResolver } from './components/ingredients/ingredients-form/ingredients-resolver.service';
 import { ShoppingListEditComponent } from './components/shopping-list/shopping-list-edit/shopping-list-edit.component';
 import { ShoppingListItemComponent } from './components/shopping-list/shopping-list-item/shopping-list-item.component';
+import { RecipesResolver } from './components/recipes/recipes-form/recipes-resolver.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { ShoppingListItemComponent } from './components/shopping-list/shopping-l
     ShoppingListItemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
-  providers: [IngredientsResolver],
+  providers: [IngredientsResolver, RecipesResolver],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
