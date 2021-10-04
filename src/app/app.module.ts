@@ -10,14 +10,14 @@ import { RecipesFormComponent } from './components/recipes/recipes-form/recipes-
 import { RecipesItemComponent } from './components/recipes/recipes-item/recipes-item.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { RecipesComponent } from './components/recipes/recipes/recipes.component';
-import { ShoppingListFormComponent } from './components/shopping-list/shopping-list-form/shopping-list-form.component';
-import { ShoppingListItemComponent } from './components/shopping-list/shopping-list-item/shopping-list-item.component';
 import { ShoppingListListComponent } from './components/shopping-list/shopping-list-list/shopping-list-list.component';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list/shopping-list.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { IngredientsResolver } from './components/ingredients/ingredients-form/ingredients-resolver.service';
+import { ShoppingListEditComponent } from './components/shopping-list/shopping-list-edit/shopping-list-edit.component';
+import { ShoppingListItemComponent } from './components/shopping-list/shopping-list-item/shopping-list-item.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +29,11 @@ import { IngredientsResolver } from './components/ingredients/ingredients-form/i
     RecipesItemComponent,
     RecipesListComponent,
     RecipesComponent,
-    ShoppingListFormComponent,
-    ShoppingListItemComponent,
     ShoppingListListComponent,
     ShoppingListComponent,
     NavigationComponent,
+    ShoppingListEditComponent,
+    ShoppingListItemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [IngredientsResolver],
