@@ -3,9 +3,9 @@
   <textarea [(ngModel)]="recipe.description" name="description" id="description" cols="30" rows="10"
     placeholder="description"></textarea>
   <div *ngFor="let ingredient of recipe.ingredients">
-    <app-ingredients-item [ingredient]="ingredient" [appHighlight]="'blue'" [defaultColor]="'transparent'"
-      (toggleIngredient)="toggleIngredient($event)"></app-ingredients-item>
+    <app-ingredients-item [ingredient]="ingredient" appBlueHighlight (toggleIngredient)="toggleIngredient($event)">
+    </app-ingredients-item>
   </div>
-  <button style="margin: 1px;" class="btn btn-danger">Cancel</button>
-  <button style="margin: 1px;" class="btn btn-primary">Submit</button>
+  <button (click)="cancelRecipe()" style="margin: 1px;" class="btn btn-danger">Cancel</button>
+  <button (click)="addRecipe()" style="margin: 1px;" class="btn btn-primary">Submit</button>
 </div>

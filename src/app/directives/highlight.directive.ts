@@ -9,11 +9,11 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[appHighlight]',
+  selector: '[appBlueHighlight]',
 })
 export class HighlightDirecive implements OnInit {
   @Input() defaultColor: string = 'transparent';
-  @Input('appHighlight') highlightColor: string = 'blue';
+  @Input('appBlueHighlight') highlightColor: string = 'blue';
 
   /**
    * On the element this reference sits access the style property and subproperty
