@@ -25,26 +25,38 @@ export class RecipesFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe((data: Data) => {
-      this.recipe = data['recipe'];
+      this.recipe = JSON.parse(JSON.stringify(data['recipe']));
+      this.ingredientsService.getIngredients().subscribe((ing) => {
+        this.ingredients = ing;
+      });
     });
   }
 
   toggleIngredient(name: string) {
-    const length = this.ingredients.length;
-    if (length > 0) {
-      this.ingredients = this.ingredients.filter((i) => i.name !== name);
-      if (this.ingredients.length == length) {
-        this.ingredientsService
-          .getIngredientByName(name)
-          .subscribe((ingredient) => {
-            this.recipe.ingredients.push(ingredient);
-          });
+    let length = this.recipe.ingredients.length;
+    this.ingredientsService.getIngredientByName(name).subscribe((ing) => {
+      this.recipe.ingredients = this.recipe.ingredients.filter(
+        (ing) => ing.name !== name
+      );
+
+      if (this.recipe.ingredients.length < length) {
+        let flag = false;
+        this.ingredients.forEach((ingre) => {
+          if (ingre.name.localeCompare(name) === 0) {
+            flag = true;
+          }
+        });
+        if (!flag) {
+          this.ingredients.push(ing);
+        }
       }
-    } else {
-      this.ingredientsService.getIngredientByName(name).subscribe((i) => {
-        this.recipe.ingredients.push(i);
-      });
-    }
+    });
+  }
+
+  removeIngredient(ingredient: Ingredient) {
+    this.recipe.ingredients = this.recipe.ingredients.filter(
+      (i) => i.name.localeCompare(ingredient.name) !== 0
+    );
   }
 
   addRecipe() {
