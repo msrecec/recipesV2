@@ -6,10 +6,9 @@ import { IngredientsListComponent } from './components/ingredients/ingredients-l
 import { RecipesFormComponent } from './components/recipes/recipes-form/recipes-form.component';
 import { RecipesResolver } from './components/recipes/recipes-form/recipes-resolver.service';
 import { RecipesComponent } from './components/recipes/recipes/recipes.component';
-import { ShoppingListComponent } from './components/shopping-list/shopping-list/shopping-list.component';
 
 const routes: Routes = [
-  { path: '', component: ShoppingListComponent },
+  { path: '', redirectTo: 'recipes' },
   {
     path: 'ingredients',
     component: IngredientsListComponent,

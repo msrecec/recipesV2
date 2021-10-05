@@ -10,14 +10,10 @@ import { RecipesFormComponent } from './components/recipes/recipes-form/recipes-
 import { RecipesItemComponent } from './components/recipes/recipes-item/recipes-item.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { RecipesComponent } from './components/recipes/recipes/recipes.component';
-import { ShoppingListListComponent } from './components/shopping-list/shopping-list-list/shopping-list-list.component';
-import { ShoppingListComponent } from './components/shopping-list/shopping-list/shopping-list.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { IngredientsResolver } from './components/ingredients/ingredients-form/ingredients-resolver.service';
-import { ShoppingListEditComponent } from './components/shopping-list/shopping-list-edit/shopping-list-edit.component';
-import { ShoppingListItemComponent } from './components/shopping-list/shopping-list-item/shopping-list-item.component';
 import { RecipesResolver } from './components/recipes/recipes-form/recipes-resolver.service';
 import { HighlightDirecive } from './directives/highlight.directive';
 
@@ -31,11 +27,7 @@ import { HighlightDirecive } from './directives/highlight.directive';
     RecipesItemComponent,
     RecipesListComponent,
     RecipesComponent,
-    ShoppingListListComponent,
-    ShoppingListComponent,
     NavigationComponent,
-    ShoppingListEditComponent,
-    ShoppingListItemComponent,
     HighlightDirecive,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],

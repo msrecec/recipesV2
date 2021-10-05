@@ -8,12 +8,17 @@
     <button (click)="removeIngredient(ingredient)" class="btn btn-danger">Delete</button>
   </div>
   <hr>
-  <div *ngFor="let ingredient of ingredients">
-    <app-ingredients-item [ingredient]="ingredient" appBlueHighlight>
+  <div *ngFor=" let ingredient of ingredients">
+    <app-ingredients-item style="width: 200px;" [ingredient]="ingredient" appBlueHighlight>
     </app-ingredients-item>
-    <button (click)="addIngredient(ingredient.name)" style="display: block; margin: 0 auto;" class="btn btn-primary">Add
+    <button style="width: 100px;" (click)="addIngredient(ingredient.name)" style="display: block; margin: 0 auto;"
+      class="btn btn-primary">Add
       Ingredient</button>
   </div>
-  <button (click)="cancelRecipe()" style="margin: 1px;" class="btn btn-danger">Cancel</button>
-  <button (click)="addRecipe()" style="margin: 1px;" class="btn btn-primary">Submit</button>
+  <hr>
+  <div style="display:flex; justify-content: center; margin: 5px;">
+    <button (click)="cancelRecipe()" style="margin: 1px;" class="btn btn-danger">Cancel</button>
+    <button (click)="addRecipe()" style="margin: 1px;" class="btn btn-primary">Submit</button>
+  </div>
+  <hr>
 </div>
