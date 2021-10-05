@@ -81,6 +81,7 @@ export class RecipesService implements OnInit {
       if (i.name.localeCompare(recipe.name) === 0) {
         cmp = true;
         i.description = recipe.description;
+        i.ingredients = recipe.ingredients;
       }
     });
     if (!cmp) {

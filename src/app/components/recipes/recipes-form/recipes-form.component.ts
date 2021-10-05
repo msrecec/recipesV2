@@ -32,7 +32,7 @@ export class RecipesFormComponent implements OnInit {
     });
   }
 
-  toggleIngredient(name: string) {
+  addIngredient(name: string) {
     let length = this.recipe.ingredients.length;
     this.ingredientsService.getIngredientByName(name).subscribe((ing) => {
       this.recipe.ingredients = this.recipe.ingredients.filter(
@@ -54,13 +54,26 @@ export class RecipesFormComponent implements OnInit {
   }
 
   removeIngredient(ingredient: Ingredient) {
+    let length = this.recipe.ingredients.length;
     this.recipe.ingredients = this.recipe.ingredients.filter(
       (i) => i.name.localeCompare(ingredient.name) !== 0
     );
+    if (this.recipe.ingredients.length < length) {
+      let flag = false;
+      this.ingredients.forEach((ingre) => {
+        if (ingre.name.localeCompare(ingredient.name) === 0) {
+          flag = true;
+        }
+      });
+      if (!flag) {
+        this.ingredients.push(ingredient);
+      }
+    }
   }
 
   addRecipe() {
     this.recipesService.addRecipe(this.recipe);
+    this.router.navigate(['recipes']);
   }
 
   cancelRecipe() {
