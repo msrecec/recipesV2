@@ -35,21 +35,14 @@ export class RecipesFormComponent implements OnInit {
   addIngredient(name: string) {
     let length = this.recipe.ingredients.length;
     this.ingredientsService.getIngredientByName(name).subscribe((ing) => {
-      this.recipe.ingredients = this.recipe.ingredients.filter(
-        (ing) => ing.name !== name
-      );
-
-      if (this.recipe.ingredients.length < length) {
-        let flag = false;
-        this.ingredients.forEach((ingre) => {
-          if (ingre.name.localeCompare(name) === 0) {
-            flag = true;
-          }
-        });
-        if (!flag) {
-          this.ingredients.push(ing);
+      this.recipe.ingredients.forEach((ingre) => {
+        if (ing.name.localeCompare(ingre.name) === 0) {
+          alert('This ingredient was already added');
+          return;
         }
-      }
+      });
+      this.recipe.ingredients.push(ing);
+      this.ingredients = this.ingredients.filter((i) => i.name !== ing.name);
     });
   }
 
