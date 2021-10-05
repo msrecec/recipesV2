@@ -10,8 +10,13 @@ import { IngredientsService } from 'src/app/services/ingredients/ingredients.ser
 })
 export class IngredientsItemComponent implements OnInit {
   @Input() ingredient!: Ingredient;
+  @Output() toggleIngredient = new EventEmitter<string>();
 
   constructor() {}
+
+  onToggle() {
+    this.toggleIngredient.emit(this.ingredient.name);
+  }
 
   ngOnInit(): void {}
 }

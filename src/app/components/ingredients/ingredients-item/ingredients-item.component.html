@@ -1,4 +1,4 @@
-<div class="card" style="display: flex; margin: 1px">
+<div (click)="onToggle()" class="card" style="display: flex; margin: 1px">
   <div class="card-body">
     <h5 class="card-title">{{ingredient.name}}</h5>
     <p class="card-text">{{ingredient.description}} is {{ingredient.halal ? 'halal' : 'not halal'}}

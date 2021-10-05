@@ -1,1 +1,11 @@
-<div class="col-6">testing</div>
+<div class="col-6">
+  <input [(ngModel)]="recipe.name" type="text" placeholder="name">
+  <textarea [(ngModel)]="recipe.description" name="description" id="description" cols="30" rows="10"
+    placeholder="description"></textarea>
+  <div *ngFor="let ingredient of recipe.ingredients">
+    <app-ingredients-item [ingredient]="ingredient" [appHighlight]="'blue'" [defaultColor]="'transparent'"
+      (toggleIngredient)="toggleIngredient($event)"></app-ingredients-item>
+  </div>
+  <button style="margin: 1px;" class="btn btn-danger">Cancel</button>
+  <button style="margin: 1px;" class="btn btn-primary">Submit</button>
+</div>

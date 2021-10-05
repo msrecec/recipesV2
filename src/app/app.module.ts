@@ -19,6 +19,7 @@ import { IngredientsResolver } from './components/ingredients/ingredients-form/i
 import { ShoppingListEditComponent } from './components/shopping-list/shopping-list-edit/shopping-list-edit.component';
 import { ShoppingListItemComponent } from './components/shopping-list/shopping-list-item/shopping-list-item.component';
 import { RecipesResolver } from './components/recipes/recipes-form/recipes-resolver.service';
+import { HighlightDirecive } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { RecipesResolver } from './components/recipes/recipes-form/recipes-resol
     NavigationComponent,
     ShoppingListEditComponent,
     ShoppingListItemComponent,
+    HighlightDirecive,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [IngredientsResolver, RecipesResolver],
